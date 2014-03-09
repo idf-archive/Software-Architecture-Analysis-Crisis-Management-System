@@ -2,7 +2,7 @@ Legacy Series: Software Architecture Analysis
 ============
 General Info
 ------------
- Crisis Management System (CMS)  
+Crisis Management System (CMS)  
 Integration of:
 * Call Center Web Portal
 * Facebook API
@@ -14,11 +14,12 @@ Integration of:
 * Postgre Database
 * Weather & Haze Information Parser
 
+![](images/800px-Architecture.png)
 Purpose of this code
 ------------
 One senior's legacy for the adorable juniors.  
 
-###Team Members
+###Contributors
 QUEK TENG YEOW  Project Manager  
 TEO KOK HIEN  QA Manager  
 ZHANG DANYANG  Lead Developer  
