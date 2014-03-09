@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="scriptlet" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" whenResourceMissingType="Empty" uuid="8cae462f-a610-4059-b305-3187bc92bfac">
+	<property name="com.jasperassistant.designer.Grid" value="false"/>
+	<property name="com.jasperassistant.designer.SnapToGrid" value="false"/>
+	<property name="com.jasperassistant.designer.GridWidth" value="12"/>
+	<property name="com.jasperassistant.designer.GridHeight" value="12"/>
+	<property name="ireport.zoom" value="1.7715610000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2411"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Owner\\Documents\\Eclipse Workspace\\SafeGuard\\src\\main\\java\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="typeName" class="java.lang.String">
+		<fieldDescription><![CDATA[typeName]]></fieldDescription>
+	</field>
+	<field name="levelReported" class="java.lang.String">
+		<fieldDescription><![CDATA[levelReported]]></fieldDescription>
+	</field>
+	<field name="dateTimeReported" class="java.util.Date">
+		<fieldDescription><![CDATA[dateTimeReported]]></fieldDescription>
+	</field>
+	<field name="location" class="java.lang.String">
+		<fieldDescription><![CDATA[location]]></fieldDescription>
+	</field>
+	<variable name="level1ReportedCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{levelReported}.equals("1") ? $V{level1ReportedCount} + 1 : $V{level1ReportedCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="level2ReportedCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{levelReported}.equals("2") ? $V{level2ReportedCount} + 1 : $V{level2ReportedCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="level3ReportedCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{levelReported}.equals("3") ? $V{level3ReportedCount} + 1 : $V{level3ReportedCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="level4ReportedCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{levelReported}.equals("4") ? $V{level4ReportedCount} + 1 : $V{level4ReportedCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="level5ReportedCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{levelReported}.equals("5") ? $V{level5ReportedCount} + 1 : $V{level5ReportedCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="level6ReportedCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{levelReported}.equals("6") ? $V{level6ReportedCount} + 1 : $V{level6ReportedCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="typeFireCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{typeName}.equals("Fire Fighting") ? $V{typeFireCount} + 1 : $V{typeFireCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="typeRescueCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{typeName}.equals("Rescue and Evaluation") ? $V{typeRescueCount} + 1 : $V{typeRescueCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="typeEmergencyCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{typeName}.equals("Emergency Ambulance") ? $V{typeEmergencyCount} + 1 : $V{typeEmergencyCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="typeGasCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{typeName}.equals("Gas Leak Control") ? $V{typeGasCount} + 1 : $V{typeGasCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="hazeMildCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{typeName}.equals("Mild") ? $V{hazeMildCount}+ 1 : $V{hazeMildCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="hazeEmergencyCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{typeName}.equals("Emergency") ? $V{hazeEmergencyCount}+ 1 : $V{hazeEmergencyCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="psiGoodCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[( Integer.parseInt($F{levelReported}) <= 50 ) ? $V{psiGoodCount}+ 1 : $V{psiGoodCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="psiModerateCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[( Integer.parseInt($F{levelReported}) >= 51 && Integer.parseInt($F{levelReported}) < 100 ) ? $V{psiModerateCount}+ 1 : $V{psiModerateCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="psiUnhealthyCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[( Integer.parseInt($F{levelReported}) >= 101 && Integer.parseInt($F{levelReported}) < 200 ) ? $V{psiUnhealthyCount}+ 1 : $V{psiUnhealthyCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="psiVeryunhealthyCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[( Integer.parseInt($F{levelReported}) >= 201 && Integer.parseInt($F{levelReported}) < 300 ) ? $V{psiVeryunhealthyCount}+ 1 : $V{psiVeryunhealthyCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="psiHazardousCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[( Integer.parseInt($F{levelReported}) > 300 ) ? $V{psiHazardousCount}+ 1 : $V{psiHazardousCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="northCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{location}.equals("North") ? $V{northCount} + 1 : $V{northCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="southCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{location}.equals("South") ? $V{southCount} + 1 : $V{southCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="eastCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{location}.equals("East") ? $V{eastCount} + 1 : $V{eastCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="westCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{location}.equals("West") ? $V{westCount} + 1 : $V{westCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="centralCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{location}.equals("Central") ? $V{centralCount} + 1 : $V{centralCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="overallCount" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{location}.equals("Overall") ? $V{overallCount} + 1 : $V{overallCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="dummy">
+		<groupExpression><![CDATA["dummy"]]></groupExpression>
+		<groupHeader>
+			<band height="51" splitType="Prevent">
+				<staticText>
+					<reportElement uuid="aaada36b-7acd-4058-9286-78faf7377f37" mode="Opaque" x="0" y="33" width="535" height="15" backcolor="#70A9A9">
+						<printWhenExpression><![CDATA[$V{dummy_COUNT} <= 10]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4293f48b-b4a6-4bfc-b0ff-9014f2d337b7" x="1" y="33" width="150" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Accident Type]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f57d4d0a-5ba0-4d5b-80a0-585e337db363" x="151" y="33" width="128" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reported Level]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9967de0a-d0cf-43a6-916b-0fccbd59e213" x="279" y="33" width="121" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Date/Time Reported]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8dc8dd26-9ce8-4fe5-ac2b-3b99d185832a" x="0" y="10" width="196" height="20"/>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Top 10 Accident Records]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="696">
+			<staticText>
+				<reportElement uuid="7c05ccaa-2d4d-45f3-b397-fa231e44e576" mode="Transparent" x="0" y="193" width="535" height="100" forecolor="#0066CC" backcolor="#999999"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Britannic Bold" size="50" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SafeGuard]]></text>
+			</staticText>
+			<elementGroup>
+				<textField pattern="dd MMM yyyy">
+					<reportElement uuid="7a256ce2-ab58-443e-9e6c-13db6f9940fa" x="217" y="508" width="100" height="20"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="b40e1b0e-d205-4201-8b95-082b38e5569d" x="196" y="486" width="143" height="20"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Half Hourly Report]]></text>
+				</staticText>
+				<textField pattern="h:mm a">
+					<reportElement uuid="8a1d0646-3d8c-4032-bc30-11aadd14cbdf" x="217" y="522" width="100" height="20"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<image scaleImage="RealSize">
+				<reportElement uuid="58753bae-be8d-42ae-be9e-0d0689b6c27e" isPrintRepeatedValues="false" mode="Transparent" x="246" y="293" width="43" height="28"/>
+				<imageExpression><![CDATA["C:\\Users\\Owner\\Desktop\\pen-02.jpg"]]></imageExpression>
+			</image>
+			<break>
+				<reportElement uuid="d679f9ce-1e60-476b-b120-0808f41d1946" x="0" y="624" width="100" height="1"/>
+			</break>
+			<line>
+				<reportElement uuid="7ca5c9fc-50bf-4e4c-8eaa-c2e4b7631706" x="65" y="474" width="404" height="2"/>
+			</line>
+			<image>
+				<reportElement uuid="75a62c9a-caf9-4628-bd01-3a692b08f127" x="3" y="0" width="166" height="72"/>
+				<imageExpression><![CDATA["C:\\Users\\Owner\\Desktop\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="15">
+			<printWhenExpression><![CDATA[$V{dummy_COUNT} <= 10]]></printWhenExpression>
+			<staticText>
+				<reportElement uuid="fd19ebb4-f2dc-4ae9-979a-1681a38823db" mode="Opaque" x="0" y="1" width="535" height="14" backcolor="#E5ECF9"/>
+				<box>
+					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5eaab39f-6657-497f-bcf9-2ac086da77ce" x="1" y="0" width="150" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{typeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="58d60f9e-34a0-473f-868a-d14eff7262b8" x="151" y="0" width="128" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{levelReported}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4ad1999a-7daf-4778-9211-cdf5a598a9a7" x="279" y="0" width="121" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateTimeReported}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="39">
+			<printWhenExpression><![CDATA[$V{dummy_COUNT} == 11]]></printWhenExpression>
+			<staticText>
+				<reportElement uuid="c5c4335f-3d57-40ba-b175-ab0b44149382" mode="Opaque" x="0" y="23" width="535" height="15" backcolor="#70A9A9">
+					<printWhenExpression><![CDATA[$V{dummy_COUNT} == 11]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fda925ef-fac8-432f-972a-ecec6552f91f" x="0" y="22" width="150" height="15">
+					<printWhenExpression><![CDATA[$V{dummy_COUNT} == 11]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Haze Classification]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="332f0336-f919-4edc-84bf-749459c320cc" x="150" y="22" width="128" height="15">
+					<printWhenExpression><![CDATA[$V{dummy_COUNT} == 11]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc6d3495-7cca-4f52-8da2-538c785571fd" x="278" y="22" width="121" height="15">
+					<printWhenExpression><![CDATA[$V{dummy_COUNT} == 11]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date/Time Reported]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ba7d573c-febd-454d-a0ab-5091811a49ad" x="3" y="3" width="193" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font size="14" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Top 10 Haze Records]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f65e0fdc-090f-4c01-854c-b0bfbe96c883" x="399" y="22" width="121" height="15">
+					<printWhenExpression><![CDATA[$V{dummy_COUNT} == 11]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location]]></text>
+			</staticText>
+		</band>
+		<band height="15">
+			<printWhenExpression><![CDATA[$V{dummy_COUNT} > 10]]></printWhenExpression>
+			<staticText>
+				<reportElement uuid="b4675b83-6d6a-4d37-8114-6c5fd4541b1e" mode="Opaque" x="-1" y="0" width="535" height="14" backcolor="#E5ECF9"/>
+				<box>
+					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="be5d23eb-2f4d-4dbe-a6b0-eb09bb8f0f29" x="0" y="0" width="150" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{typeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ba0da9d1-c9c7-49ac-b600-0305cca71907" x="150" y="0" width="128" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{levelReported}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5a629a45-e1c3-4a3b-9057-c8fbcd6dcc2e" x="278" y="0" width="121" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateTimeReported}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49a609ad-890b-4381-bda8-92cbf99357e5" x="399" y="0" width="121" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<textField evaluationTime="Report">
+				<reportElement uuid="f14d6e60-bbc9-4819-ba35-6b15475f3a07" x="595" y="5" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="782">
+			<staticText>
+				<reportElement uuid="5d2e4087-24a5-49f3-9631-3e932071e7f0" mode="Opaque" x="3" y="1" width="529" height="20" backcolor="#70A9A9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Accident Charts]]></text>
+			</staticText>
+			<pieChart>
+				<chart>
+					<reportElement uuid="89f6b501-682f-43f5-b482-06d6c5b15b8f" x="3" y="21" width="269" height="150"/>
+					<chartTitle position="Top">
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Percentage of Accidents by Level"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? false:true]]></incrementWhenExpression>
+					</dataset>
+					<pieSeries>
+						<keyExpression><![CDATA["Level 1"]]></keyExpression>
+						<valueExpression><![CDATA[$V{level1ReportedCount}]]></valueExpression>
+						<labelExpression><![CDATA["Level 1"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Level 2"]]></keyExpression>
+						<valueExpression><![CDATA[$V{level2ReportedCount}]]></valueExpression>
+						<labelExpression><![CDATA["Level 2"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Level 3"]]></keyExpression>
+						<valueExpression><![CDATA[$V{level3ReportedCount}]]></valueExpression>
+						<labelExpression><![CDATA["Level 3"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Level 4"]]></keyExpression>
+						<valueExpression><![CDATA[$V{level4ReportedCount}]]></valueExpression>
+						<labelExpression><![CDATA["Level 4"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Level 5"]]></keyExpression>
+						<valueExpression><![CDATA[$V{level5ReportedCount}]]></valueExpression>
+						<labelExpression><![CDATA["Level 5"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Level 6"]]></keyExpression>
+						<valueExpression><![CDATA[$V{level6ReportedCount}]]></valueExpression>
+						<labelExpression><![CDATA["Level 6"]]></labelExpression>
+					</pieSeries>
+				</pieDataset>
+				<piePlot isShowLabels="true">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<pieChart>
+				<chart>
+					<reportElement uuid="b6c8ba3a-cd28-44e5-9b25-97123a6f1b76" x="269" y="21" width="269" height="150"/>
+					<chartTitle position="Top">
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Percentage of Accidents by Type"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? false:true]]></incrementWhenExpression>
+					</dataset>
+					<pieSeries>
+						<keyExpression><![CDATA["Fire Fighting"]]></keyExpression>
+						<valueExpression><![CDATA[$V{typeFireCount}]]></valueExpression>
+						<labelExpression><![CDATA["Fire Fighting"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Rescue and Evaluation"]]></keyExpression>
+						<valueExpression><![CDATA[$V{typeRescueCount}]]></valueExpression>
+						<labelExpression><![CDATA["Rescue and Evaluation"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Emergency Ambulance"]]></keyExpression>
+						<valueExpression><![CDATA[$V{typeEmergencyCount}]]></valueExpression>
+						<labelExpression><![CDATA["Emergency Ambulance"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Gas Leak"]]></keyExpression>
+						<valueExpression><![CDATA[$V{typeGasCount}]]></valueExpression>
+						<labelExpression><![CDATA["Gas Leak"]]></labelExpression>
+					</pieSeries>
+				</pieDataset>
+				<piePlot isShowLabels="true">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<lineChart>
+				<chart>
+					<reportElement uuid="8012c277-bfcb-417e-94cc-7827fc85ab0e" x="6" y="176" width="266" height="150"/>
+					<chartTitle>
+						<titleExpression><![CDATA["Line Chart of Accidents by Level"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? false:true]]></incrementWhenExpression>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Level Reported"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{levelReported}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{COLUMN_COUNT}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+			<lineChart>
+				<chart>
+					<reportElement uuid="277b9e50-e66b-443b-8b53-917200e31685" x="269" y="176" width="266" height="150"/>
+					<chartTitle>
+						<titleExpression><![CDATA["Line Chart of Accidents by Type"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? false:true]]></incrementWhenExpression>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Type"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{typeName}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{COLUMN_COUNT}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+			<multiAxisChart>
+				<chart>
+					<reportElement uuid="591d6f83-630a-4c4d-9455-867d8ffa7cb3" x="4" y="308" width="531" height="128"/>
+					<chartTitle>
+						<titleExpression><![CDATA["Accident Comparison"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis>
+						<lineChart>
+							<chart>
+								<reportElement uuid="d280912c-5280-4be4-a75b-a8e8f1842f0e" x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000">
+									<titleExpression><![CDATA["Accident Comparison"]]></titleExpression>
+								</chartTitle>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+							</chart>
+							<categoryDataset>
+								<dataset>
+									<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? false:true]]></incrementWhenExpression>
+								</dataset>
+								<categorySeries>
+									<seriesExpression><![CDATA["Level Reported"]]></seriesExpression>
+									<categoryExpression><![CDATA[$F{levelReported}]]></categoryExpression>
+									<valueExpression><![CDATA[$V{dummy_COUNT}]]></valueExpression>
+								</categorySeries>
+							</categoryDataset>
+							<linePlot>
+								<plot/>
+								<categoryAxisFormat>
+									<axisFormat/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</linePlot>
+						</lineChart>
+					</axis>
+					<axis>
+						<lineChart>
+							<chart>
+								<reportElement uuid="0d2ff109-1191-4eae-9314-a539a6235943" x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000">
+									<titleExpression><![CDATA["Accident Comparison"]]></titleExpression>
+								</chartTitle>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+							</chart>
+							<categoryDataset>
+								<dataset>
+									<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? false:true]]></incrementWhenExpression>
+								</dataset>
+								<categorySeries>
+									<seriesExpression><![CDATA["Type"]]></seriesExpression>
+									<categoryExpression><![CDATA[$F{typeName}]]></categoryExpression>
+									<valueExpression><![CDATA[$V{dummy_COUNT}]]></valueExpression>
+								</categorySeries>
+							</categoryDataset>
+							<linePlot>
+								<plot/>
+								<categoryAxisFormat>
+									<axisFormat/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</linePlot>
+						</lineChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+			<staticText>
+				<reportElement uuid="aef38385-84d7-47dc-8476-148ec0c31c81" mode="Opaque" x="9" y="324" width="529" height="20" backcolor="#70A9A9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Haze Charts]]></text>
+			</staticText>
+			<break>
+				<reportElement uuid="6210717e-e813-4aa2-be0f-7dc20d8a021d" x="0" y="318" width="100" height="1"/>
+			</break>
+			<pieChart>
+				<chart>
+					<reportElement uuid="1cd16a48-cfe8-45e1-8193-0dcca4d6b948" x="6" y="344" width="269" height="150"/>
+					<chartTitle position="Top">
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Percentage of Haze by Level"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? true:false]]></incrementWhenExpression>
+					</dataset>
+					<pieSeries>
+						<keyExpression><![CDATA["Good"]]></keyExpression>
+						<valueExpression><![CDATA[$V{psiGoodCount}]]></valueExpression>
+						<labelExpression><![CDATA["Good"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Moderate"]]></keyExpression>
+						<valueExpression><![CDATA[$V{psiModerateCount}]]></valueExpression>
+						<labelExpression><![CDATA["Moderate"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Unhealthy"]]></keyExpression>
+						<valueExpression><![CDATA[$V{psiUnhealthyCount}]]></valueExpression>
+						<labelExpression><![CDATA["Unhealthy"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Very unhealthy"]]></keyExpression>
+						<valueExpression><![CDATA[$V{psiVeryunhealthyCount}]]></valueExpression>
+						<labelExpression><![CDATA["Very unhealthy"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Hazardous"]]></keyExpression>
+						<valueExpression><![CDATA[$V{psiHazardousCount}]]></valueExpression>
+						<labelExpression><![CDATA["Hazardous"]]></labelExpression>
+					</pieSeries>
+				</pieDataset>
+				<piePlot isShowLabels="true">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<pieChart>
+				<chart>
+					<reportElement uuid="6297c126-4b0d-45a2-98ff-bc2b2514a76d" x="272" y="344" width="269" height="150"/>
+					<chartTitle position="Top">
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Percentage of Accidents by Location"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? true:false]]></incrementWhenExpression>
+					</dataset>
+					<pieSeries>
+						<keyExpression><![CDATA["North"]]></keyExpression>
+						<valueExpression><![CDATA[$V{northCount}]]></valueExpression>
+						<labelExpression><![CDATA["North"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["South"]]></keyExpression>
+						<valueExpression><![CDATA[$V{southCount}]]></valueExpression>
+						<labelExpression><![CDATA["South"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["East"]]></keyExpression>
+						<valueExpression><![CDATA[$V{eastCount}]]></valueExpression>
+						<labelExpression><![CDATA["East"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["West"]]></keyExpression>
+						<valueExpression><![CDATA[$V{westCount}]]></valueExpression>
+						<labelExpression><![CDATA["West"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Central"]]></keyExpression>
+						<valueExpression><![CDATA[$V{centralCount}]]></valueExpression>
+						<labelExpression><![CDATA["Central"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Overall"]]></keyExpression>
+						<valueExpression><![CDATA[$V{overallCount}]]></valueExpression>
+						<labelExpression><![CDATA["Overall"]]></labelExpression>
+					</pieSeries>
+				</pieDataset>
+				<piePlot isShowLabels="true">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<lineChart>
+				<chart>
+					<reportElement uuid="2c29288b-7d93-4a41-9d77-c6107919c3d5" x="272" y="494" width="266" height="125"/>
+					<chartTitle>
+						<titleExpression><![CDATA["Line Chart of Haze by Location"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? true:false]]></incrementWhenExpression>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Location"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{location}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{location}.equals("North")? $V{northCount}: ($F{location}.equals("South")? $V{southCount}: ($F{location}.equals("East")?$V{eastCount}:($F{location}.equals("West")?$V{westCount}:($F{location}.equals("Central")?$V{centralCount}:$V{overallCount}))))]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+			<lineChart>
+				<chart>
+					<reportElement uuid="b492f89b-2610-4714-abd2-db3675b965e9" x="9" y="494" width="266" height="125"/>
+					<chartTitle>
+						<titleExpression><![CDATA["Line Chart of Haze by PSI"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? true:false]]></incrementWhenExpression>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["PSI"]]></seriesExpression>
+						<categoryExpression><![CDATA[(Integer.parseInt($F{levelReported})/new Integer(100))== 0 ? "Low" : ((Integer.parseInt($F{levelReported})/new Integer(100) == 1)? "Medium" : ((Integer.parseInt($F{levelReported})/new Integer(100) == 2)? "High" : "Extreme"))]]></categoryExpression>
+						<valueExpression><![CDATA[$V{COLUMN_COUNT} - new Integer(10)]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+			<multiAxisChart>
+				<chart>
+					<reportElement uuid="ee6a0ba2-2967-45a4-afa0-015633610c31" x="9" y="619" width="523" height="146"/>
+					<chartTitle>
+						<titleExpression><![CDATA["Haze Comparison"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis>
+						<lineChart>
+							<chart>
+								<reportElement uuid="353bede9-807a-444b-96f2-d58f9c9aa0d9" x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000">
+									<titleExpression><![CDATA["Haze Comparison"]]></titleExpression>
+								</chartTitle>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+							</chart>
+							<categoryDataset>
+								<dataset>
+									<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? true:false]]></incrementWhenExpression>
+								</dataset>
+								<categorySeries>
+									<seriesExpression><![CDATA["PSI"]]></seriesExpression>
+									<categoryExpression><![CDATA[(Integer.parseInt($F{levelReported})/new Integer(100))== 0 ? "Low" : ((Integer.parseInt($F{levelReported})/new Integer(100) == 1)? "Medium" : ((Integer.parseInt($F{levelReported})/new Integer(100) == 2)? "High" : "Extreme"))]]></categoryExpression>
+									<valueExpression><![CDATA[$V{COLUMN_COUNT}-new Integer(10)]]></valueExpression>
+								</categorySeries>
+							</categoryDataset>
+							<linePlot>
+								<plot/>
+								<categoryAxisFormat>
+									<axisFormat/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</linePlot>
+						</lineChart>
+					</axis>
+					<axis>
+						<lineChart>
+							<chart>
+								<reportElement uuid="3f803b7b-0881-465d-a9d5-ee9cc95cd020" x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000">
+									<titleExpression><![CDATA["Haze Comparison"]]></titleExpression>
+								</chartTitle>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+							</chart>
+							<categoryDataset>
+								<dataset>
+									<incrementWhenExpression><![CDATA[($V{dummy_COUNT}>new Integer(10))? true:false]]></incrementWhenExpression>
+								</dataset>
+								<categorySeries>
+									<seriesExpression><![CDATA["Location"]]></seriesExpression>
+									<categoryExpression><![CDATA[$F{location}]]></categoryExpression>
+									<valueExpression><![CDATA[$F{location}.equals("North")? $V{northCount}: ($F{location}.equals("South")? $V{southCount}: ($F{location}.equals("East")?$V{eastCount}:($F{location}.equals("West")?$V{westCount}:($F{location}.equals("Central")?$V{centralCount}:$V{overallCount}))))]]></valueExpression>
+								</categorySeries>
+							</categoryDataset>
+							<linePlot>
+								<plot/>
+								<categoryAxisFormat>
+									<axisFormat/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</linePlot>
+						</lineChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+		</band>
+	</summary>
+</jasperReport>

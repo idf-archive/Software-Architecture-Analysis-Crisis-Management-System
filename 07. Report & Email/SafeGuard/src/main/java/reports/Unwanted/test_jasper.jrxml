@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="scriptlet" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" whenResourceMissingType="Empty" uuid="8cae462f-a610-4059-b305-3187bc92bfac">
+	<property name="com.jasperassistant.designer.Grid" value="false"/>
+	<property name="com.jasperassistant.designer.SnapToGrid" value="false"/>
+	<property name="com.jasperassistant.designer.GridWidth" value="12"/>
+	<property name="com.jasperassistant.designer.GridHeight" value="12"/>
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="722"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="country" class="java.lang.String">
+		<fieldDescription><![CDATA[country]]></fieldDescription>
+	</field>
+	<field name="occupation" class="java.lang.String">
+		<fieldDescription><![CDATA[occupation]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="place" class="java.lang.String">
+		<fieldDescription><![CDATA[place]]></fieldDescription>
+	</field>
+	<group name="dummy">
+		<groupExpression><![CDATA["dummy"]]></groupExpression>
+		<groupHeader>
+			<band height="51" splitType="Prevent">
+				<staticText>
+					<reportElement uuid="aaada36b-7acd-4058-9286-78faf7377f37" mode="Opaque" x="0" y="33" width="535" height="15" backcolor="#70A9A9"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4293f48b-b4a6-4bfc-b0ff-9014f2d337b7" x="136" y="33" width="150" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Occupation]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f57d4d0a-5ba0-4d5b-80a0-585e337db363" x="286" y="33" width="128" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Place]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9967de0a-d0cf-43a6-916b-0fccbd59e213" x="414" y="33" width="121" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Country]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7fe2b1ae-4128-408c-b203-a76272ec53b6" x="0" y="33" width="136" height="15"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8dc8dd26-9ce8-4fe5-ac2b-3b99d185832a" x="0" y="10" width="149" height="20"/>
+					<textElement verticalAlignment="Top">
+						<font size="14" isBold="true" isItalic="false" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[Accident List Report]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="696">
+			<staticText>
+				<reportElement uuid="7c05ccaa-2d4d-45f3-b397-fa231e44e576" mode="Transparent" x="0" y="193" width="535" height="100" forecolor="#0066CC" backcolor="#999999"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Britannic Bold" size="50" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SafeGuard]]></text>
+			</staticText>
+			<elementGroup>
+				<textField pattern="dd MMM yyyy">
+					<reportElement uuid="7a256ce2-ab58-443e-9e6c-13db6f9940fa" x="217" y="508" width="100" height="20"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="b40e1b0e-d205-4201-8b95-082b38e5569d" x="196" y="486" width="143" height="20"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Half Hourly Report]]></text>
+				</staticText>
+				<textField pattern="h:mm a">
+					<reportElement uuid="8a1d0646-3d8c-4032-bc30-11aadd14cbdf" x="217" y="522" width="100" height="20"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<image scaleImage="RealSize">
+				<reportElement uuid="58753bae-be8d-42ae-be9e-0d0689b6c27e" isPrintRepeatedValues="false" mode="Transparent" x="246" y="293" width="43" height="28"/>
+				<imageExpression><![CDATA["C:\\Users\\Owner\\Desktop\\pen-02.jpg"]]></imageExpression>
+			</image>
+			<break>
+				<reportElement uuid="d679f9ce-1e60-476b-b120-0808f41d1946" x="0" y="624" width="100" height="1"/>
+			</break>
+			<line>
+				<reportElement uuid="7ca5c9fc-50bf-4e4c-8eaa-c2e4b7631706" x="65" y="474" width="404" height="2"/>
+			</line>
+			<multiAxisChart>
+				<chart>
+					<reportElement uuid="79847e8e-8d43-445e-900d-32ff0ec353a5" x="474" y="40" width="200" height="100"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis>
+						<lineChart>
+							<chart>
+								<reportElement uuid="e0d04144-fd88-4889-b763-96c56315d132" x="0" y="0" width="0" height="0" backcolor="#FFFFFF"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+							</chart>
+							<categoryDataset/>
+							<linePlot>
+								<plot/>
+								<categoryAxisFormat>
+									<axisFormat/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</linePlot>
+						</lineChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+		</band>
+	</title>
+	<detail>
+		<band height="15">
+			<staticText>
+				<reportElement uuid="fd19ebb4-f2dc-4ae9-979a-1681a38823db" mode="Opaque" x="0" y="1" width="535" height="14" backcolor="#E5ECF9"/>
+				<box>
+					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5eaab39f-6657-497f-bcf9-2ac086da77ce" x="136" y="0" width="150" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{occupation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="58d60f9e-34a0-473f-868a-d14eff7262b8" x="286" y="0" width="128" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{place}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4ad1999a-7daf-4778-9211-cdf5a598a9a7" x="414" y="0" width="121" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ddac79f8-8b60-413b-b225-7fd179273d0a" x="0" y="0" width="136" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35" splitType="Immediate">
+			<textField evaluationTime="Report">
+				<reportElement uuid="a55b3386-48a6-4e26-9946-e7a91377c72f" x="414" y="15" width="121" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="201">
+			<pieChart>
+				<chart>
+					<reportElement uuid="89f6b501-682f-43f5-b482-06d6c5b15b8f" x="0" y="0" width="269" height="200"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{country}]]></keyExpression>
+					<valueExpression><![CDATA[$V{COLUMN_COUNT}]]></valueExpression>
+					<labelExpression><![CDATA[$V{dummy_COUNT}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot isShowLabels="true">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<lineChart>
+				<chart>
+					<reportElement uuid="8012c277-bfcb-417e-94cc-7827fc85ab0e" x="269" y="0" width="266" height="200"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Dummy Series"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{occupation}]]></categoryExpression>
+						<valueExpression><![CDATA[$V{COLUMN_COUNT}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</summary>
+</jasperReport>

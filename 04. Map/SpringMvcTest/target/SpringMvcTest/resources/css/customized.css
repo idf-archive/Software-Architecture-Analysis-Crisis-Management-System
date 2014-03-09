@@ -1,0 +1,229 @@
+img.center {
+    /* make the image center */
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+div.crop {
+    height: 480px;
+    overflow: hidden;
+    background-repeat:no-repeat;
+    background-position: center center; /* x: center, y: center */
+}
+.section_header {
+     width: 100%;
+     margin-bottom: 60px;
+ }
+
+div.padding{
+    padding: 20px;
+}
+div.footerWrapper{
+    background-color: #bc3d11;
+}
+.footerWrapper a{
+    color: #ffffff;
+
+}
+.footerWrapper a:hover{
+    color: #000000;
+}
+p.contrast{
+    color: #ffffff;
+}
+.section_header h3 {
+    color: rgb(100, 100, 100);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 40px;
+    border-bottom: 1px solid #b3b3b3;
+    padding-bottom: 0;
+    display: inline-block;
+    margin: 0;
+}
+h6 {
+    font-size: 21px;
+    font-style: italic;
+    color: #252526;
+    line-height: 29px;
+    font-weight: normal;
+    margin: 0 0 16px 0;
+}
+div.margin_bottom_top {
+     margin-bottom: 70px;
+     margin-top: 35px;
+}
+div.margin_top {
+    margin-top: 35px;
+}
+div.margin_bottom {
+    margin-bottom: 70px;
+}
+div.feature {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 65px;
+}
+/**************** price ****************/
+.price span.qty {
+    font-size: 47px;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+}
+.price {
+    color: #1189D9;
+}
+.price span.dollar {
+    font-size: 32px;
+    position: relative;
+    top: -6px;
+    margin-right: 3px;
+}
+#quick_description h3{
+    font-style: italic;
+}
+/**************** picture ************/
+#picture .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 3px 3px;
+}
+/**************** form ****************/
+.form-control.input-xsmall {
+    height: 30px;
+    padding: 3px 6px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+/**************** div ****************/
+div.center{
+    /*make the stuffs center inside the div*/
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; !important /* this line make it work */
+}
+div.push{
+    height: 100px;
+}
+div.push5{
+    height: 25px;
+}
+div.push1{
+    height: 5px;
+}
+div.push2{
+    height: 10px;
+}
+div.push10{
+    height: 50px;
+}
+div.margin{
+    margin: 10px;
+}
+div.roundcorner{
+    border-radius:5px;
+}
+/**************** Flush Footer ****************/
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+    overflow: visible; /* otherwise got scroll bar */ /* scroll bar problem cannot be solved */
+    /* padding-bottom:150px; */ /* this needs to be bigger than footer height*/
+}
+
+.footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+}
+/**************** HTML5 Semantics ****************/
+section,
+article,
+footer{
+    text-align: justify;
+}
+footer{
+    background-color: #252528;
+    color: #b5b5b6;
+}
+#footer_end{
+    margin-bottom: 30px;
+}
+
+a.jump-link{
+
+}
+
+img.full{
+   width: 1100px; !important /* limit the width when the image is displayed as full */
+}
+/**************** span ****************/
+span.pre{
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap !important;
+    white-space : pre;
+    /*word-break: break-all;*/
+    word-wrap: break-word; /* IE */
+    display: block;
+}
+span.emphasis{
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 45px;
+}
+p.pre{
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap !important;
+    /*word-break: break-all;*/
+    word-wrap: break-word; /* IE */
+    display: block;
+}
+/**************** form data ****************/
+span.form_constant{
+    line-height: 35px;
+}
+span.dynamic-info{
+    color: #18bc9c;
+}
+span.inactive,
+span.inactive a{
+    color: #dddddd;
+    text-decoration: none;
+}
+span.active{
+    color: #18bc9c;
+}
+/**************** price ****************/
+span.price_black{
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: bolder;
+}
+span.usual_price{
+    color: #e74c3c;
+    text-decoration: line-through;
+}
+p .large-font{
+    font-size: 20px;
+}
+body{
+    background-color: #ffffff;
+}
+div.transparent{
+    background-color:#ffffff;
+    opacity:0.6;
+
+}
+footer a:hover, a:focus {
+    color: #b5b5b6;
+    text-decoration: underline;
+}
+footer a{
+    color: #b5b5b6;
+}
