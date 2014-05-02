@@ -1,4 +1,4 @@
-Legacy Series: Software Architecture Analysis
+Software Architecture Analysis - 2013 Autumn
 ============
 General Info
 ------------
